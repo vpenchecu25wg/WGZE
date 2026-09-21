@@ -10,11 +10,10 @@
     <?php
     $hitza = "liburua";
     $gordeta = [];
-    $prueba = array("e","r","t","xc","f");
     for($x = 0; $x < strlen($hitza)/2; $x++){
         array_push($gordeta, strchr($hitza, $x));
     }
-    echo(var_dump($prueba));
+    echo(var_dump($gordeta));
 
 ?>
 </body>
