@@ -6,10 +6,9 @@ if ($izarrak %2 != 0){
 } else {
     for ($x = 0; $x < $izarrak/2; $x++){
         echo "_";
-        for ($y = 0; $y < $x+2; $y++){
+        for ($y = 1; $y < $x+2; $y++){
             echo "*";
         }
-        echo "<br>";
     };
 };
 
