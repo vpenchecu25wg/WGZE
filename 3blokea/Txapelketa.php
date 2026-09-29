@@ -1,15 +1,19 @@
 <?php
 class Txapelketa{
-    private $korrikalariak = [];
+    private array $korrikalariak = [];
 
 
     function korrikalarigehitu($korrikalari){
-        array_push($this->$korrikalariak,$korrikalari);
-    }; 
+        $this->korrikalariak[$korrikalari->izena] = $korrikalari;
+    }
 
 
-    function gehitulasterketakorrikalariari(){
-        
+    function gehitulasterketakorrikalariari($kodea, $denbora){
+        foreach($this->korrikalariak as $korrikalariak => $codigoa){
+            if($codigoa == $kodea){
+                $korrikalariak->lasterketagehitu($denbora);
+            }
+        }
     }
 }
 ?>

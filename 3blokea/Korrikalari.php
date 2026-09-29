@@ -11,7 +11,7 @@ function __construct($izena,$kodea){
 
 function lasterketagehitu($denbora){
 
-    if(count($lasterketa) > 5 || $denbora < 5){
+    if(count($this->lasterketa) > 5 || $denbora < 5){
         throw new Exception ("5 lasterketetan ezin da parte hartu");
     }else{
         array_push($this->lasterketa, $denbora);
