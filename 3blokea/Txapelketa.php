@@ -26,18 +26,19 @@ class Txapelketa{
     }
 
     return $guztira / $kopurua;
-    }  
+    }
 
-function azkarrena(){
+    function azkarrena(){
         $azkarrenaT = PHP_INT_MAX;
         $azkarrenaK = "";
         foreach($this->korrikalariak as $clave => $valor){
-            if($valor < $azkarrenaT){
+        $denbora = $this->$valor->getLehenLasterketa();
+            if($denbora < $azkarrenaT){
                 $azkarrenaT = $valor;
                 $azkarrenaK = $clave;
             }
         }
         return "azkarrena:  " .$azkarrenaK. ". Denbora: " .$azkarrenaT;
-    }
+}
 }
 ?>

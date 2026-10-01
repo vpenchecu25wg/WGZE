@@ -22,15 +22,5 @@ $media = $txapelketa->lehenLasterketarenBatezBestekoa();
 
 echo "Lehenengo lasterketaren batez bestekoa: " . $media;
 
-function azkarrena(){
-        $azkarrenaT = PHP_INT_MAX;
-        $azkarrenaK = "";
-        foreach($this->korrikalariak as $clave => $valor){
-            if($valor < $azkarrenaT){
-                $azkarrenaT = $valor;
-                $azkarrenaK = $clave;
-            }
-        }
-        return "azkarrena:  " .$azkarrenaK. ". Denbora: " .$azkarrenaT;
-}
+$txapelketa->azkarrena();
 ?>
