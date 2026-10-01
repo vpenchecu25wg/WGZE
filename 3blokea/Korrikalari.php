@@ -15,9 +15,18 @@ function lasterketagehitu($denbora){
         throw new Exception ("5 lasterketetan ezin da parte hartu");
     }else{
         array_push($this->lasterketa, $denbora);
-        echo "Lasterketa gordeta";
     }
 }
 
+function getIzena(){
+    return $this->izena;
+}
+
+function getKodea(){
+    return $this->kodea;
+}
+function getLehenLasterketa(){
+    return $this->lasterketa[0];
+}
 }
 ?>

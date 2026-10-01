@@ -3,17 +3,30 @@ class Txapelketa{
     private array $korrikalariak = [];
 
 
-    function korrikalarigehitu($korrikalari){
-        $this->korrikalariak[$korrikalari->izena] = $korrikalari;
+    function korrikalarigehitu($korrikalaria){
+        $this->korrikalariak[$korrikalaria->getKodea()] = $korrikalaria;
     }
 
 
     function gehitulasterketakorrikalariari($kodea, $denbora){
-        foreach($this->korrikalariak as $korrikalariak => $codigoa){
+        foreach($this->korrikalariak as $codigoa => $korrikalaria){
             if($codigoa == $kodea){
-                $korrikalariak->lasterketagehitu($denbora);
+            $korrikalaria->lasterketagehitu($denbora);
             }
         }
     }
+
+    function lehenLasterketarenBatezBestekoa(){
+    $guztira = 0;
+    $kopurua = 0;
+
+    foreach($this->korrikalariak as $korrikalaria){
+        $guztira += $korrikalaria->getLehenLasterketa();
+        $kopurua++;
+    }
+
+    return $guztira / $kopurua;
+    }  
+
 }
 ?>
