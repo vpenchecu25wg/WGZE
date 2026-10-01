@@ -25,8 +25,21 @@ function getIzena(){
 function getKodea(){
     return $this->kodea;
 }
+
 function getLehenLasterketa(){
     return $this->lasterketa[0];
 }
+
+function azkarrena(){
+        $azkarrenaT = PHP_INT_MAX;
+        $azkarrenaK = "";
+        foreach($this->lasterketa as $clave => $valor){
+            if($valor < $azkarrenaT){
+                $azkarrenaT = $valor;
+                $azkarrenaK = $clave;
+            }
+        }
+        return "azkarrena:  " .$azkarrenaK. ". Denbora: " .$azkarrenaT;
+    }
 }
 ?>

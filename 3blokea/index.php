@@ -7,6 +7,7 @@ $korrikalaria1 = new Korrikalari("Ane", "K001");
 $korrikalaria2 = new Korrikalari("Jon", "K002");
 $korrikalaria3 = new Korrikalari("Mikel", "K003");
 
+
 $txapelketa = new Txapelketa();
 
 $txapelketa->korrikalarigehitu($korrikalaria1);
@@ -21,7 +22,15 @@ $media = $txapelketa->lehenLasterketarenBatezBestekoa();
 
 echo "Lehenengo lasterketaren batez bestekoa: " . $media;
 
-foreach($this->Korrikalari as $korrika => $denbora){
-    
+function azkarrena(){
+        $azkarrenaT = PHP_INT_MAX;
+        $azkarrenaK = "";
+        foreach($this->korrikalariak as $clave => $valor){
+            if($valor < $azkarrenaT){
+                $azkarrenaT = $valor;
+                $azkarrenaK = $clave;
+            }
+        }
+        return "azkarrena:  " .$azkarrenaK. ". Denbora: " .$azkarrenaT;
 }
 ?>
