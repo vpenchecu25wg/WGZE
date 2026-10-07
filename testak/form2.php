@@ -6,27 +6,21 @@
     <title>Form test</title>
 </head>
 <body>
-    <form method="POST">
-    <input type="text" id="userName" name="userName" placeholder="Sartu izena">
-    <button>Bidali</button>
-    </form>
+
     <?php
-    $klasekoLista = [];
-    if(!(empty($_POST['userName'])==true)){
-        array_push($klasekoLista, $_POST['userName']);
-        echo "count array: " .count($klasekoLista);
+    if(isset($_POST['bidali'])){
+        $klasekoLista =  $_POST['klasekoLista']." " .$_POST['izena'];
+        echo "klasekoLista: " .$klasekoLista;
 
     }else{
-    echo "<p>Ez duzu izenik sartu!</p>";
+        $klasekoLista = "";
     };
-
-    echo print_r($klasekoLista);
-    for ($x = 0; $x < count($klasekoLista); $x++){
-    echo "<pre>";
-    echo "<p>Klaseko lista: " .print_r($klasekoLista[$x]). "!</p>";
-    echo "</pre>";
-    }
-
+    echo "<br>";
     ?>
+        <form method="POST" action="form2.php">
+    <input type="text" name="izena" placeholder="Sartu izena">
+    <?php echo "<input type='hidden' name='klasekoLista' value='".$klasekoLista."'>"?>
+    <button name="bidali">Bidali</button>
+    </form>
 </body>
 </html>
