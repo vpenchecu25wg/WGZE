@@ -19,7 +19,7 @@ class Film
     }
 
     function getUrtea(){
-        return $this->izena;
+        return $this->urtea;
     }
 
     function ikusiFilmarenInformazioa()

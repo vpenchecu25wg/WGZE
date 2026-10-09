@@ -23,7 +23,6 @@
     ];
 
 
-
     echo '<table style="border: 1px solid black">';
 
     foreach ($filmak as $filmlist) {
@@ -37,7 +36,15 @@
         echo '</td>';
         echo '<tr>';
     }
+
+
     ?>
+    <form method="POST" action="form2.php">
+    <input type="text" name="izena" placeholder="Sartu izena">
+    <?php echo "<input type='hidden' name='klasekoLista' value='".$klasekoLista."'>"?>
+    <button name="bidali">Bidali</button>
+    </form>
+
 </body>
 
 </html>
